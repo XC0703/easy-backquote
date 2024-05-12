@@ -1,0 +1,53 @@
+{
+  "name": "easy-backquote",
+  "description": "这款插件主要用于在 Markdown 文档编辑中快速插入反引号。",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.68.0"
+  },
+  "publisher": "easy-backquote",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XC0703/easy-backquote"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "images/icon.png",
+  "activationEvents": [
+    "onLanguage: markdown"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "keybindings": [
+      {
+        "command": "easy-backquote.single",
+        "key": "shift+`",
+        "when": "editorTextFocus"
+      }
+    ],
+    "commands": [
+      {
+        "command": "easy-backquote.single",
+        "title": "easy-backquote.single"
+      },
+      {
+        "command": "easy-backquote.batching",
+        "title": "easy-backquote.batching"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "18.x",
+    "@types/vscode": "^1.68.0",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  }
+}
